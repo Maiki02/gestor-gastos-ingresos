@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LabelsCardComponent } from './labels-card.component';
 import { LabelModule } from '../label/label.module';
+import { PlusSignModule } from '../plus-sign/plus-sign.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { LabelModule } from '../label/label.module';
   ],
   imports: [
     CommonModule,
-    LabelModule
+    LabelModule,
+    PlusSignModule
   ], exports: [
     LabelsCardComponent
   ]

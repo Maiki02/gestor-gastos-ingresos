@@ -8,7 +8,7 @@ import { Label } from 'src/app/shared/interfaces/label.interface';
 })
 export class LabelComponent {
   @Input() label!:Label;
-  @Input() size:number=32; //Tamain in pixels
+  @Input() size:number=40; //Tamain in pixels
   
   constructor(){ }
 
