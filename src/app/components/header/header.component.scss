@@ -1,0 +1,20 @@
+@import './../../shared/vars.scss';
+
+header{
+    height: 50px;
+    background:$color-primary;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.amount{
+    font-size:16px;
+    line-height: 100%;
+}
+
+.icon.edit{
+    width:16px;
+    height:16px;
+    background:red;
+}
