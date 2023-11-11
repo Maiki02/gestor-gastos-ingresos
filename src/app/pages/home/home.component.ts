@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnumSelect } from 'src/app/components/select/select.component';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
+  selects=EnumSelect
 }

@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { FooterModule } from 'src/app/components/footer/footer.module';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { SelectModule } from 'src/app/components/select/select.module';
+import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SelectModule } from 'src/app/components/select/select.module';
     CommonModule,
     HeaderModule,
     FooterModule,
-    SelectModule
+    SelectModule,
+    LabelsCardModule
   ], exports: [
     HomeComponent
   ]

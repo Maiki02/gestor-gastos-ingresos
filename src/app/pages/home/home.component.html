@@ -1,7 +1,12 @@
 <div class="page-container">
-    <app-header class="width-100"></app-header>
-    <app-select class="width-100"></app-select>
+    <app-header class="section width-100"></app-header>
+    <app-select class="section width-100 margin-24"></app-select>
 
-    <app-footer class="width-100 fixed-bottom"></app-footer>
+
+
+    <app-labels-card class="section width-100 margin-24" [selected]="selects.GASTOS"></app-labels-card>
+    <app-labels-card class="section width-100 margin-24" [selected]="selects.INGRESOS"></app-labels-card>
+
+    <app-footer class="section width-100 fixed-bottom"></app-footer>
 </div>
 

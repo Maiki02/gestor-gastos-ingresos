@@ -1,5 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { SELECT_GASTOS, SELECT_INGRESOS } from 'src/app/shared/const/select.const';
+
+export enum EnumSelect {
+  INGRESOS = 'ingresos',
+  GASTOS = 'gastos'
+}
+
 
 @Component({
   selector: 'app-select',
@@ -7,11 +12,10 @@ import { SELECT_GASTOS, SELECT_INGRESOS } from 'src/app/shared/const/select.cons
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent {
-  SELECT_INGRESOS=SELECT_INGRESOS;
-  SELECT_GASTOS=SELECT_GASTOS;
-  selected:string=SELECT_INGRESOS;
+  enumSelect=EnumSelect;
+  selected:string=EnumSelect.INGRESOS;
 
-  setSelected(value:string){
+  setSelected(value:EnumSelect){
     this.selected=value;
   }
 }

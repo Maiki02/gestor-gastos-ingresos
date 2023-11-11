@@ -1,4 +1,4 @@
 <div class="select-container row-center">
-    <button [ngClass]="{'selected': selected==SELECT_INGRESOS}" (click)="setSelected(SELECT_INGRESOS)">Ingresos</button>
-    <button [ngClass]="{'selected': selected==SELECT_GASTOS}" (click)="setSelected(SELECT_GASTOS)">Gastos</button>
+    <button [ngClass]="{'selected': selected==enumSelect.INGRESOS}" (click)="setSelected(enumSelect.INGRESOS)">Ingresos</button>
+    <button [ngClass]="{'selected': selected==enumSelect.GASTOS}" (click)="setSelected(enumSelect.GASTOS)">Gastos</button>
 </div>
