@@ -3,6 +3,6 @@
 
     <div class="labels">
         <app-label class="label" *ngFor="let label of labels" [label]="label"></app-label>
-        <plus-sign class="label"></plus-sign>
+        <plus-sign class="label" (click)="goToLabels()"></plus-sign>
     </div>
 </div>
