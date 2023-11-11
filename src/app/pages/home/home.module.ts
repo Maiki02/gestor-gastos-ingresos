@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { FooterModule } from 'src/app/components/footer/footer.module';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { SelectModule } from 'src/app/components/select/select.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { HeaderModule } from 'src/app/components/header/header.module';
   imports: [
     CommonModule,
     HeaderModule,
-    FooterModule
+    FooterModule,
+    SelectModule
   ], exports: [
     HomeComponent
   ]

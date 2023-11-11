@@ -1,0 +1,4 @@
+<div class="select-container row-center">
+    <button [ngClass]="{'selected': selected==SELECT_INGRESOS}" (click)="setSelected(SELECT_INGRESOS)">Ingresos</button>
+    <button [ngClass]="{'selected': selected==SELECT_GASTOS}" (click)="setSelected(SELECT_GASTOS)">Gastos</button>
+</div>
