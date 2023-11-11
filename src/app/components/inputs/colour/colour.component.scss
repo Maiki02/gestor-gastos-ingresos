@@ -1,0 +1,14 @@
+@import './../../../shared/styles/vars.scss';
+@import './../input.scss';
+
+
+.input{
+    flex: 1;
+    height: $HEIGHT_INPUT;
+    border-radius: 6px;
+    background: #FFF;
+}
+
+span{
+    font-size:14px;
+}

@@ -1,0 +1,12 @@
+@import './../../../shared/styles/vars.scss';
+@import './../input.scss';
+
+.button{
+    background: $color-enabled;
+    width:100%;
+    height: $HEIGHT_INPUT;
+    color: $color-white;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+}

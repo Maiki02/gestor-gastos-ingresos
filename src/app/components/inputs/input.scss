@@ -1,0 +1,10 @@
+@import './../../shared/styles/vars.scss';
+
+$HEIGHT_INPUT:32px;
+
+.input-container{
+    background:$color-primary;
+    width:100%;
+    padding:8px;
+    border-radius: 10px;
+}
