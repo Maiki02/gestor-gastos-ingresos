@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LABEL_VOID } from 'src/app/shared/const/label';
+import { LABEL_VOID, allLabels } from 'src/app/shared/const/label';
 import { Label } from 'src/app/shared/interfaces/label.interface';
 
 @Component({
@@ -9,14 +9,19 @@ import { Label } from 'src/app/shared/interfaces/label.interface';
 })
 export class LabelsPageComponent {
   labelToGenerate:Label=LABEL_VOID;
+  name:string='';
+  allLabels:Label[]=allLabels;
 
   constructor() { 
     this.setColour('#ffffff');
   }
 
-
   setColour(colour:string){
     this.labelToGenerate={...this.labelToGenerate, color: colour }
+  }
+
+  setIcon(label:Label){
+    this.labelToGenerate={...this.labelToGenerate, name: label.name }
   }
 
 }

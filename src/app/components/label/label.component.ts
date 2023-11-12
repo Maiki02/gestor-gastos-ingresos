@@ -9,6 +9,7 @@ import { Label } from 'src/app/shared/interfaces/label.interface';
 export class LabelComponent {
   @Input() label!:Label;
   @Input() size:number=40; //Tamain in pixels
+  @Input() iconSize:number=20; //Tamain in pixels
   
   constructor(){ }
 
@@ -17,6 +18,13 @@ export class LabelComponent {
       "width": this.size+'px', 
       "height": this.size+'px', 
       "background-color": this.label.color
+    }
+  }
+
+  getIconSize(){
+    return {
+      "width": this.iconSize+'px',
+      "height": this.iconSize+'px'
     }
   }
 }

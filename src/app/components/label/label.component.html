@@ -1,3 +1,5 @@
 <div class="label row-center" [style]="getStyle()">
-    <img class="image" src="'./../../../../assets/icons/shopping_cart.svg"/>
+    <img *ngIf="(label?.name?.length ?? 0)>0" 
+    [style]="getIconSize()" class="image" 
+    src="'./../../../../assets/icons/{{label.name}}.svg"/>
 </div>

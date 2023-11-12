@@ -1,0 +1,17 @@
+@import './../../../shared/styles/vars.scss';
+@import './../input.scss';
+
+.input{ 
+    width: 100%;
+    height: $HEIGHT_INPUT;
+    background: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    color: #000000;
+    padding: 0 10px;
+}
+
+span{
+    font-size:14px;
+}

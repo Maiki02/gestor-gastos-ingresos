@@ -2,7 +2,7 @@
     <span class="info">{{text}}</span>
 
     <div class="labels">
-        <app-label class="label" *ngFor="let label of labels" [label]="label"></app-label>
-        <plus-sign class="label" *ngIf="showAdd" (click)="goToLabels()"></plus-sign>
+        <app-label class="label pointer" *ngFor="let label of labels" [label]="label" (click)="selectIcon(label)"></app-label>
+        <plus-sign class="label pointer" *ngIf="showAdd" (click)="goToLabels()"></plus-sign>
     </div>
 </div>

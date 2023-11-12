@@ -7,6 +7,7 @@ import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.mod
 import { FooterModule } from 'src/app/components/footer/footer.module';
 import { ColourInputModule } from 'src/app/components/inputs/colour/colour.module';
 import { ButtonInputModule } from 'src/app/components/inputs/button/button.module';
+import { TextInputModule } from 'src/app/components/inputs/text/text.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ButtonInputModule } from 'src/app/components/inputs/button/button.modul
     SelectModule,
     LabelModule,
     LabelsCardModule,
+    TextInputModule,
     ColourInputModule,
     ButtonInputModule,
     FooterModule

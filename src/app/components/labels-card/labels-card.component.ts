@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { EnumSelect } from '../select/select.component';
 import { Label } from 'src/app/shared/interfaces/label.interface';
 import { Router } from '@angular/router';
@@ -13,10 +13,14 @@ export class LabelsCardComponent {
   @Input() text:string='';
   @Input() labels:Label[]=[]
   @Input() showAdd:boolean=true;
+  @Output() select= new EventEmitter<Label>();
   constructor(private router:Router) { }
 
   goToLabels(){
     this.router.navigate(['/'+NAVEGATION.labels])
+  }
 
+  selectIcon(label:Label){
+    return this.select.emit(label);
   }
 }
