@@ -8,8 +8,8 @@
 
 
     <div class="page-with-padding">
-        <app-color-input class="section width-100 margin-24"></app-color-input>
-        <app-labels-card class="section width-100 margin-24"></app-labels-card>
+        <app-color-input class="section width-100 margin-24" (set)="setColour($event)"></app-color-input>
+        <app-labels-card class="section width-100 margin-24" [text]="'Selecciona una imagen:'" [showAdd]="false"></app-labels-card>
         <app-button-input class="section width-100 margin-24" [text]="'Aplicar'"></app-button-input>
     </div>
 

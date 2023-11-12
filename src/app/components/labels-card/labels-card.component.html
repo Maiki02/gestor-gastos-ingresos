@@ -1,8 +1,8 @@
 <div class="card-label column-left">
-    <span class="info">Etiquetas de {{selected}}:</span>
+    <span class="info">{{text}}</span>
 
     <div class="labels">
         <app-label class="label" *ngFor="let label of labels" [label]="label"></app-label>
-        <plus-sign class="label" (click)="goToLabels()"></plus-sign>
+        <plus-sign class="label" *ngIf="showAdd" (click)="goToLabels()"></plus-sign>
     </div>
 </div>

@@ -11,7 +11,12 @@ export class LabelsPageComponent {
   labelToGenerate:Label=LABEL_VOID;
 
   constructor() { 
-    this.labelToGenerate={...this.labelToGenerate, color: '#000000' }
+    this.setColour('#ffffff');
+  }
+
+
+  setColour(colour:string){
+    this.labelToGenerate={...this.labelToGenerate, color: colour }
   }
 
 }

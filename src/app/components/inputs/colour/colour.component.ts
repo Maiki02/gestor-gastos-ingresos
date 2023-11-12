@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-color-input',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./colour.component.scss', './../input.scss']
 })
 export class ColourInputComponent {
+  @Output() set=new EventEmitter<string>();
+
+  constructor(){}
+
+  changeColor(event:any){
+    this.set.emit(event.target.value)
+  }
 
 }

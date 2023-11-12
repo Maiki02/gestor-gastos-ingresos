@@ -10,8 +10,9 @@ import { NAVEGATION } from 'src/app/shared/const/navegation';
   styleUrls: ['./labels-card.component.scss']
 })
 export class LabelsCardComponent {
-  @Input() selected!:EnumSelect;
+  @Input() text:string='';
   @Input() labels:Label[]=[]
+  @Input() showAdd:boolean=true;
   constructor(private router:Router) { }
 
   goToLabels(){

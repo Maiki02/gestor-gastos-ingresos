@@ -4,8 +4,8 @@
 
     <div class="page-with-padding">
         
-    <app-labels-card class="section width-100 margin-24" [selected]="selects.GASTOS" [labels]="labelGastos"></app-labels-card>
-    <app-labels-card class="section width-100 margin-24" [selected]="selects.INGRESOS" [labels]="labelIngresos"></app-labels-card>
+    <app-labels-card class="section width-100 margin-24" [text]="getText(selects.GASTOS)" [labels]="labelGastos"></app-labels-card>
+    <app-labels-card class="section width-100 margin-24" [text]="getText(selects.INGRESOS)" [labels]="labelIngresos"></app-labels-card>
 
     </div>
 

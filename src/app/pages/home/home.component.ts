@@ -22,4 +22,9 @@ export class HomeComponent {
     {id: 2, name: 'Ventas', color: '#00FF00'},
     {id: 3, name: 'Otros', color: '#0000FF'}
   ]
+
+  getText(select:EnumSelect){
+    return `Etiquetas de ${select}:`
+
+  }
 }
