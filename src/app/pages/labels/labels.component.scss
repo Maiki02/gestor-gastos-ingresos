@@ -1,14 +1,20 @@
 @import './../../shared/styles/body-page.scss';
 @import './../../shared/styles/vars.scss';
 
+$HEIGHT: 256px;
+
 .label-generate-container{
-    background: $color-primary;
-    padding:16px;
+    background: linear-gradient(to bottom, $color-primary, $color-background);
+    padding:16px 0 $HEIGHT 0;
+}
+
+.page-with-padding{
+    margin-top: calc(16px - $HEIGHT);
 }
 
 .card{
     padding:16px;
-    background-color: $color-primary;
+    background-color: $color-white;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     border-radius:10px;
 }

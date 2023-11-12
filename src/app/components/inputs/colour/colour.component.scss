@@ -6,9 +6,10 @@
     flex: 1;
     height: $HEIGHT_INPUT;
     border-radius: 6px;
-    background: #FFF;
+    background: $color-white;
 }
 
 span{
+    color: $color-dark;
     font-size:14px;
 }

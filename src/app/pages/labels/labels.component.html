@@ -1,19 +1,17 @@
 <div class="page-container">
 
     <div class="label-generate-container row-center">
-        <app-label [label]="labelToGenerate" [size]="128" [iconSize]="64"></app-label>
+        <app-label class="label-generate" [label]="labelToGenerate" [size]="128" [iconSize]="64"></app-label>
     </div>
 
-    <app-select class="section width-100 margin-24"></app-select>
-
-
     <div class="page-with-padding">
-        <div class="card">
-            <app-text-input class="section margin-24" [text]="name"></app-text-input>
-            <app-color-input class="section margin-24" (set)="setColour($event)"></app-color-input>
-            <app-labels-card class="section margin-24" [text]="'Selecciona un icono:'" [showAdd]="false" [labels]="allLabels" 
+        <div class="card column-left gap-8">
+            <app-select class="section width-100"></app-select>
+            <app-text-input class="section width-100" [text]="name"></app-text-input>
+            <app-color-input class="section width-100" (set)="setColour($event)"></app-color-input>
+            <app-labels-card class="section width-100" [text]="'Selecciona un icono:'" [showAdd]="false" [labels]="allLabels" 
             (select)="setIcon($event)"></app-labels-card>
-            <app-button-input class="section margin-24" [text]="'Aplicar'"></app-button-input>    
+            <app-button-input class="section width-100" [text]="'Aplicar'"></app-button-input>    
         </div>
     </div>
 

@@ -1,4 +1,5 @@
-<div class="select-container row-center">
+<div class="select-container row-left">
     <button class="pointer" [ngClass]="{'selected': selected==enumSelect.INGRESOS}" (click)="setSelected(enumSelect.INGRESOS)">Ingresos</button>
     <button class="pointer" [ngClass]="{'selected': selected==enumSelect.GASTOS}" (click)="setSelected(enumSelect.GASTOS)">Gastos</button>
+    <div class="rect {{selected}}"></div>
 </div>
