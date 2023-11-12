@@ -5,16 +5,18 @@
     </div>
 
     <div class="page-with-padding">
-        <div class="card column-left gap-8">
+        <div class="card column-left gap-8 margin-24">
             <app-select class="section width-100"></app-select>
             <app-text-input class="section width-100" [text]="name"></app-text-input>
             <app-color-input class="section width-100" (set)="setColour($event)"></app-color-input>
-            <app-labels-card class="section width-100" [text]="'Selecciona un icono:'" [showAdd]="false" [labels]="allLabels" 
+            <app-labels-card class="section width-100" [text]="'Selecciona un icono:'" 
+            [showAdd]="false" [labels]="allLabels" [centerContent]="true" 
             (select)="setIcon($event)"></app-labels-card>
             <app-button-input class="section width-100" [text]="'Aplicar'"></app-button-input>    
         </div>
     </div>
 
+    <div class="footer-void"></div>
     <app-footer class="section width-100 fixed-bottom"></app-footer>
 </div>
 

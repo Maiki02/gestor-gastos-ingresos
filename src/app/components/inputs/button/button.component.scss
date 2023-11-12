@@ -4,9 +4,10 @@
 .button{
     background: $color-primary;
     width:100%;
-    height: $HEIGHT_INPUT;
+    height: 40px;
     color: $color-white;
     outline: none;
     border: none;
     border-radius: 6px;
+    font-size: 14px;
 }

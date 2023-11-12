@@ -12,7 +12,9 @@ import { NAVEGATION } from 'src/app/shared/const/navegation';
 export class LabelsCardComponent {
   @Input() text:string='';
   @Input() labels:Label[]=[]
+  @Input() centerContent:boolean=false;
   @Input() showAdd:boolean=true;
+
   @Output() select= new EventEmitter<Label>();
   constructor(private router:Router) { }
 
