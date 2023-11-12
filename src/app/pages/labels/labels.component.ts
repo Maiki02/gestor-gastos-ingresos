@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LABEL_VOID, allLabels } from 'src/app/shared/const/label';
+import { COLOR_PRIMARY, LABEL_VOID, allLabels } from 'src/app/shared/const/label';
 import { Label } from 'src/app/shared/interfaces/label.interface';
 
 @Component({
@@ -13,7 +13,7 @@ export class LabelsPageComponent {
   allLabels:Label[]=allLabels;
 
   constructor() { 
-    this.setColour('#ffffff');
+    this.setColour(COLOR_PRIMARY);
   }
 
   setColour(colour:string){

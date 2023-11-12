@@ -1,8 +1,9 @@
 @import './../../shared/styles/vars.scss';
 
 nav{
-    height: 50px;
+    height: 42px;
     background: $color-primary;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
 }
 
 ul{
@@ -10,7 +11,7 @@ ul{
     margin:0;
     padding:0 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
 }
@@ -21,13 +22,27 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    background:red;
+    position:relative;
     cursor: pointer;
     transition:.3s;
 }
 
-li:hover{
-    background:lightpink;
+.circle{
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: $color-primary;
+    position: absolute;
+    top:-16px;
 }
 
+.plus{
+    position:absolute;
+    top:-12px;
+}
+
+.icon:not(.plus){
+    width:28px;
+    height:28px;
+}

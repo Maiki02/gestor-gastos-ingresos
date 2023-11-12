@@ -8,11 +8,13 @@
 
 
     <div class="page-with-padding">
-        <app-text-input class="section width-100 margin-24" [text]="name"></app-text-input>
-        <app-color-input class="section width-100 margin-24" (set)="setColour($event)"></app-color-input>
-        <app-labels-card class="section width-100 margin-24" [text]="'Selecciona un icono:'" [showAdd]="false" [labels]="allLabels" 
-        (select)="setIcon($event)"></app-labels-card>
-        <app-button-input class="section width-100 margin-24" [text]="'Aplicar'"></app-button-input>
+        <div class="card">
+            <app-text-input class="section margin-24" [text]="name"></app-text-input>
+            <app-color-input class="section margin-24" (set)="setColour($event)"></app-color-input>
+            <app-labels-card class="section margin-24" [text]="'Selecciona un icono:'" [showAdd]="false" [labels]="allLabels" 
+            (select)="setIcon($event)"></app-labels-card>
+            <app-button-input class="section margin-24" [text]="'Aplicar'"></app-button-input>    
+        </div>
     </div>
 
     <app-footer class="section width-100 fixed-bottom"></app-footer>
