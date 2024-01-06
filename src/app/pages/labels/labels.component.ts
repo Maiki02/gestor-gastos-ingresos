@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EnumSelect } from 'src/app/components/select/select.component';
 import { COLOR_PRIMARY, LABEL_VOID, allLabels } from 'src/app/shared/const/label';
 import { Label } from 'src/app/shared/interfaces/label.interface';
 import { isValidLabel } from 'src/app/shared/labels';
@@ -9,7 +10,10 @@ import { isValidLabel } from 'src/app/shared/labels';
   styleUrls: ['./labels.component.scss']
 })
 export class LabelsPageComponent {
-  labelToGenerate:Label=LABEL_VOID;
+  labelToGenerate:Label={
+    ...LABEL_VOID,
+    section: EnumSelect.GASTOS
+  };
   name:string='';
   allLabels:Label[]=allLabels;
   messageInfo:string='';
@@ -20,6 +24,14 @@ export class LabelsPageComponent {
 
   getName(){
     return this.labelToGenerate.name ?? '';
+  }
+
+  getSection(){
+    return this.labelToGenerate.section ?? '';
+  }
+
+  setSection(section:string){
+    this.labelToGenerate={...this.labelToGenerate, section: section }
   }
 
   setName(name:string){

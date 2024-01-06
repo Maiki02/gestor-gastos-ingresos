@@ -6,7 +6,7 @@
 
     <div class="page-with-padding">
         <div class="card column-left gap-8 margin-24">
-            <app-select class="section width-100"></app-select>
+            <app-select class="section width-100" [selected]="getSection()" (set)="setSection($event)"></app-select>
             
             <app-text-input class="section width-100" [text]="getName()" (set)="setName($event)"></app-text-input>
 

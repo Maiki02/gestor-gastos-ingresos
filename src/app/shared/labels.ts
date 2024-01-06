@@ -1,10 +1,11 @@
+import { EnumSelect } from "../components/select/select.component";
 import { allLabels } from "./const/label";
 import { Label } from "./interfaces/label.interface";
 
 /*Given a Label, validates if all its fields are valid.
     Label -> boolean */
 export function isValidLabel(label:Label):boolean{
-    return isNameValid(label.name) && isColorValid(label.color) && isIconValid(label.icon); 
+    return isNameValid(label.name) && isColorValid(label.color) && isIconValid(label.icon) && isSectionValid(label.section); 
 }
 
 /* Given a name, validates if its name is valid.
@@ -41,4 +42,13 @@ function isValidHexadecimal(hexString: string): boolean {
     // Use a regular expression to check if the string is a valid hexadecimal
     const hexRegex = /^[0-9A-Fa-f]+$/;
     return hexRegex.test(hexString);
+}
+
+/**
+ * Given a string representing a section, returns whether it is a valid section.
+ * @param section - The input string to be validated.
+ * @returns True if the input is a valid section, false otherwise.
+ */
+function isSectionValid(section:string | undefined):boolean{
+    return section==EnumSelect.GASTOS || section==EnumSelect.INGRESOS;
 }

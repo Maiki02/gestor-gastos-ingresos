@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export enum EnumSelect {
   INGRESOS = 'ingresos',
@@ -13,7 +13,8 @@ export enum EnumSelect {
 })
 export class SelectComponent {
   enumSelect=EnumSelect;
-  selected:string=EnumSelect.INGRESOS;
+  @Input() selected:string=EnumSelect.INGRESOS;
+  @Output() set = new EventEmitter<string>();
 
   setSelected(value:EnumSelect){
     this.selected=value;
