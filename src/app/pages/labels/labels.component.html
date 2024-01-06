@@ -7,12 +7,18 @@
     <div class="page-with-padding">
         <div class="card column-left gap-8 margin-24">
             <app-select class="section width-100"></app-select>
-            <app-text-input class="section width-100" [text]="name"></app-text-input>
+            
+            <app-text-input class="section width-100" [text]="getName()" (set)="setName($event)"></app-text-input>
+
             <app-color-input class="section width-100" (set)="setColour($event)"></app-color-input>
+            
             <app-labels-card class="section width-100" [text]="'Selecciona un icono:'" 
-            [showAdd]="false" [labels]="allLabels" [centerContent]="true" 
-            (select)="setIcon($event)"></app-labels-card>
-            <app-button-input class="section width-100" [text]="'Aplicar'"></app-button-input>    
+            [showAdd]="false" [labels]="allLabels" [centerContent]="true" (select)="setIcon($event)"></app-labels-card>
+
+            <div class="column-left gap-2 width-100">
+                <app-button-input class="section width-100" [text]="'Aplicar'" (click)="saveLabel()"></app-button-input> 
+                <span class="message-info message-error">{{messageInfo}}</span>   
+            </div>
         </div>
     </div>
 

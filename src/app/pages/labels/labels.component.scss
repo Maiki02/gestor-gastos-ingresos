@@ -18,3 +18,14 @@ $HEIGHT: 256px;
     box-shadow: 0 0 10px rgba(0,0,0,.3);
     border-radius:10px;
 }
+
+.message-info{
+    font-size: 14px;
+    padding: 0px 4px;
+}
+
+@media screen and (max-width: 1024px) {
+    .message-info{
+        font-size: 12px;
+    }
+}

@@ -11,17 +11,17 @@ export class HomeComponent {
   selects=EnumSelect;
 
   labelGastos:Label[]=[
-    {id: 1, name: 'restaurant', color: '#FE4E00'},
-    {id: 2, name: 'bus', color: '#ABABAB'},
-    {id: 3, name: 'tool', color: '#222222'},
-    {id: 4, name: 'shirt', color: '#FF00FF'},
-    {id: 5, name: 'card', color: '#FF0000'}
+    {id: 1, icon: 'restaurant', color: '#FE4E00'},
+    {id: 2, icon: 'bus', color: '#ABABAB'},
+    {id: 3, icon: 'tool', color: '#222222'},
+    {id: 4, icon: 'shirt', color: '#FF00FF'},
+    {id: 5, icon: 'card', color: '#FF0000'}
   ]
 
   labelIngresos:Label[]=[
-    {id: 1, name: 'cash', color: '#0AF00F'},
-    {id: 2, name: 'cripto', color: '#FE4E00'},
-    {id: 3, name: 'store', color: '#ACACAC'}
+    {id: 1, icon: 'cash', color: '#0AF00F'},
+    {id: 2, icon: 'cripto', color: '#FE4E00'},
+    {id: 3, icon: 'store', color: '#ACACAC'}
   ]
 
   getText(select:EnumSelect){

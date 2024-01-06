@@ -1,17 +1,17 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { InputForm } from '../input';
 
 @Component({
   selector: 'app-color-input',
   templateUrl: './colour.component.html',
   styleUrls: ['./colour.component.scss']
 })
-export class ColourInputComponent {
-  @Output() set=new EventEmitter<string>();
-
-  constructor(){}
-
-  changeColor(event:any){
-    this.set.emit(event.target.value)
+export class ColourInputComponent extends InputForm {
+  constructor(){
+    super();
   }
 
+  changeColor(event:any){
+    this.emit(event.target.value);
+  }
 }

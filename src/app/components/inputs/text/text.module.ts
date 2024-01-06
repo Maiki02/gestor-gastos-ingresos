@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TextInputComponent } from './text.component';
-import { FormsModule } from '@angular/forms';
-
-
 
 @NgModule({
   declarations: [
     TextInputComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule
+    CommonModule
   ], exports: [
     TextInputComponent
   ]
