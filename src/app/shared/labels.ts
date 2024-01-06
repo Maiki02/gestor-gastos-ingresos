@@ -1,5 +1,6 @@
 import { EnumSelect } from "../components/select/select.component";
 import { allLabels } from "./const/label";
+import { localStorageLabel } from "./const/localStorage";
 import { Label } from "./interfaces/label.interface";
 
 /*Given a Label, validates if all its fields are valid.
@@ -51,4 +52,12 @@ function isValidHexadecimal(hexString: string): boolean {
  */
 function isSectionValid(section:string | undefined):boolean{
     return section==EnumSelect.GASTOS || section==EnumSelect.INGRESOS;
+}
+
+
+export function saveLabelInLocalStorage(label:Label){
+    const nameLocStor= label.section === EnumSelect.GASTOS ? localStorageLabel.labelsGastos : localStorageLabel.labelsIngresos;
+    const labelsInLocalStorage = localStorage.getItem(nameLocStor) ? JSON.parse(localStorage.getItem(nameLocStor)!) : [];
+    labelsInLocalStorage.push(label);
+    localStorage.setItem(nameLocStor, JSON.stringify(labelsInLocalStorage));
 }

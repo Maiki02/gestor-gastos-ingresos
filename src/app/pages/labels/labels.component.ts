@@ -10,16 +10,14 @@ import { isValidLabel } from 'src/app/shared/labels';
   styleUrls: ['./labels.component.scss']
 })
 export class LabelsPageComponent {
-  labelToGenerate:Label={
-    ...LABEL_VOID,
-    section: EnumSelect.GASTOS
-  };
-  name:string='';
+  labelToGenerate:Label=LABEL_VOID
   allLabels:Label[]=allLabels;
   messageInfo:string='';
 
   constructor() { 
     this.setColour(COLOR_PRIMARY);
+    this.setSection(EnumSelect.GASTOS);
+    this.setName('');
   }
 
   getName(){
