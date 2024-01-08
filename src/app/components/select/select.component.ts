@@ -18,5 +18,6 @@ export class SelectComponent {
 
   setSelected(value:EnumSelect){
     this.selected=value;
+    this.set.emit(value);
   }
 }

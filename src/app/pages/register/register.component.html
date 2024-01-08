@@ -1,10 +1,19 @@
 <div class="page-container">
     <app-header class="section width-100"></app-header>
     <app-select class="section width-100 margin-24" [selected]="select" (set)="setSelect($event)"></app-select>
-    
-    <app-text-input [value]="''"></app-text-input>
 
-    <app-labels-card class="section width-100 margin-24" [text]="getText(select)" [labels]="getLabels(select)"></app-labels-card>
+    <div class="page-with-padding">
+        <app-text-input [value]="''"></app-text-input>
+        
+        <app-labels-card class="section width-100 margin-24" [showAdd]="false"
+        [text]="getText(select)" [labels]="getLabels(select)" 
+        [showSelected]="true" [selected]="getIconSelected()" (select)="setLabelSelected($event)"></app-labels-card>
 
-    <app-date-input [value]="''"></app-date-input>
+        <app-date-input [value]="getDateSelected()" [placeholder]="'Ingresa una fecha'"></app-date-input>
+
+        <div class="column-left gap-2 width-100">
+            <app-button-input class="section width-100" [text]="'Aplicar'" (click)="saveRegister()"></app-button-input> 
+            <span class="message-info message-error">{{messageInfo}}</span>   
+        </div>
+    </div>
 </div>

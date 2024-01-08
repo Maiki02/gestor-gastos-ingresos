@@ -6,6 +6,7 @@ import { SelectModule } from 'src/app/components/select/select.module';
 import { TextInputModule } from 'src/app/components/inputs/text/text.module';
 import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.module';
 import { DateInputModule } from 'src/app/components/inputs/date/date.module';
+import { ButtonInputModule } from 'src/app/components/inputs/button/button.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { DateInputModule } from 'src/app/components/inputs/date/date.module';
     TextInputModule,
     DateInputModule,
     LabelsCardModule,
+    ButtonInputModule
   ], exports: [
     RegisterPageComponent
   ]

@@ -1,8 +1,11 @@
 <div class="card-label column-left">
-    <span class="info">{{text}}</span>
+    <span class="info" *ngIf="text">{{text}}</span>
 
     <div class="labels" [ngClass]="{'center-content':centerContent}">
-        <app-label class="label pointer" *ngFor="let label of labels" [label]="label" (click)="selectIcon(label)"></app-label>
+        <app-label *ngFor="let label of labels" [label]="label" 
+        class="label pointer" [ngClass]="{'is-selected': showSelected && selected==label.icon}" 
+        (click)="selectIcon(label)"></app-label>
+        
         <plus-sign class="label pointer" *ngIf="showAdd" (click)="goToLabels()"></plus-sign>
     </div>
 </div>

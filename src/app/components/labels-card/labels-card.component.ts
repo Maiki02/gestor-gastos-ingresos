@@ -14,6 +14,8 @@ export class LabelsCardComponent {
   @Input() labels:Label[]=[]
   @Input() centerContent:boolean=false;
   @Input() showAdd:boolean=true;
+  @Input() showSelected:boolean=true;
+  @Input() selected:string=''; //Only used when showSelected is true
 
   @Output() select= new EventEmitter<Label>();
   constructor(private router:Router) { }
