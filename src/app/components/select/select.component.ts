@@ -13,8 +13,8 @@ export enum EnumSelect {
 })
 export class SelectComponent {
   enumSelect=EnumSelect;
-  @Input() selected:string=EnumSelect.INGRESOS;
-  @Output() set = new EventEmitter<string>();
+  @Input() selected:EnumSelect=EnumSelect.INGRESOS;
+  @Output() set = new EventEmitter<EnumSelect>();
 
   setSelected(value:EnumSelect){
     this.selected=value;

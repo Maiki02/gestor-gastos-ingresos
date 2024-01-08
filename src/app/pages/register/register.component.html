@@ -1,0 +1,10 @@
+<div class="page-container">
+    <app-header class="section width-100"></app-header>
+    <app-select class="section width-100 margin-24" [selected]="select" (set)="setSelect($event)"></app-select>
+    
+    <app-text-input [value]="''"></app-text-input>
+
+    <app-labels-card class="section width-100 margin-24" [text]="getText(select)" [labels]="getLabels(select)"></app-labels-card>
+
+    <app-date-input [value]="''"></app-date-input>
+</div>

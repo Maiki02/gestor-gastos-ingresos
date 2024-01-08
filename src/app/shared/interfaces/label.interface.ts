@@ -5,7 +5,7 @@ export interface Label {
     name?: string;
     icon: string;
     color: string;
-    section?: string;
+    section?: EnumSelect;
     description?: string;
     createdAt?: Date;
     updatedAt?: Date;

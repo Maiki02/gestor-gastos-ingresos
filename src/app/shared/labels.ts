@@ -54,6 +54,42 @@ function isSectionValid(section:string | undefined):boolean{
     return section==EnumSelect.GASTOS || section==EnumSelect.INGRESOS;
 }
 
+/**
+ * Given an enumSelect. Returns a string called 'Etiquetas de ...'
+ * @param select - The input enumSelect.
+ * @returns A string called 'Etiquetas de ...'
+ */
+export function getLabelText(select:EnumSelect){
+    return `Etiquetas de ${select}:`
+}
+
+/**
+ * Given a label, returns the expense labels.
+ * @param
+ * @returns An array with the expense labels saved.
+ */
+export function getExpenseLabels():Label[]{
+    return [
+        {id: 1, icon: 'restaurant', color: '#FE4E00'},
+        {id: 2, icon: 'bus', color: '#ABABAB'},
+        {id: 3, icon: 'tool', color: '#222222'},
+        {id: 4, icon: 'shirt', color: '#FF00FF'},
+        {id: 5, icon: 'card', color: '#FF0000'}
+    ]    
+}
+
+/**
+ * Given a label, returns the income labels.
+ * @param
+ * @returns An array with the income labels saved.
+ */
+export function getIncomeLabels(){
+    return [
+        {id: 1, icon: 'cash', color: '#0AF00F'},
+        {id: 2, icon: 'cripto', color: '#FE4E00'},
+        {id: 3, icon: 'store', color: '#ACACAC'}
+    ]    
+}
 
 export function saveLabelInLocalStorage(label:Label){
     const nameLocStor= label.section === EnumSelect.GASTOS ? localStorageLabel.labelsGastos : localStorageLabel.labelsIngresos;

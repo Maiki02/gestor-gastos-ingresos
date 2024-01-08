@@ -25,10 +25,10 @@ export class LabelsPageComponent {
   }
 
   getSection(){
-    return this.labelToGenerate.section ?? '';
+    return this.labelToGenerate.section ?? EnumSelect.GASTOS;
   }
 
-  setSection(section:string){
+  setSection(section:EnumSelect){
     this.labelToGenerate={...this.labelToGenerate, section: section }
   }
 

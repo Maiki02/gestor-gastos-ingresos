@@ -7,7 +7,6 @@ import { InputForm } from '../input';
   styleUrls: ['./text.component.scss']
 })
 export class TextInputComponent extends InputForm {
-  @Input() text:string='';
   
   constructor(){
     super();
