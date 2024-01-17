@@ -1,5 +1,5 @@
 <div class="input-container row-left gap-8">
-    <input class="input" type="number"
+    <input class="input" [ngClass]="{'is-enabled':value}" type="number"
     [value]="value == 0 ? null : value"
     [placeholder]="placeholder" 
     [min]="0"

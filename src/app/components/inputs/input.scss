@@ -8,3 +8,7 @@ $HEIGHT_INPUT:32px;
     padding:4px;
     border-radius: 10px;
 }
+
+.is-enabled{
+    border: 1px solid $color-primary !important;
+}
