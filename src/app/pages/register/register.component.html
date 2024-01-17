@@ -4,6 +4,9 @@
 
     <div class="page-with-padding">
         
+        <app-number-input class="section width-100 margin-24" [value]="this.registerToGenerate.amount" [placeholder]="'Ingresa un número'" 
+        (set)="setAmount($event)"></app-number-input>
+
         <app-labels-card class="section width-100 margin-24" [showAdd]="false"
         [text]="getText(this.registerToGenerate.section)" [labels]="getLabels(this.registerToGenerate.section)" 
         [showSelected]="true" [selected]="getIconSelected()" (select)="setLabelSelected($event)"></app-labels-card>
@@ -15,4 +18,8 @@
             <span class="message-info message-error">{{messageInfo}}</span>   
         </div>
     </div>
+
+    
+    <div class="footer-void"></div>
+    <app-footer class="section width-100 fixed-bottom"></app-footer>
 </div>

@@ -7,6 +7,8 @@ import { TextInputModule } from 'src/app/components/inputs/text/text.module';
 import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.module';
 import { DateInputModule } from 'src/app/components/inputs/date/date.module';
 import { ButtonInputModule } from 'src/app/components/inputs/button/button.module';
+import { FooterModule } from 'src/app/components/footer/footer.module';
+import { NumberInputModule } from 'src/app/components/inputs/number/number.module';
 
 @NgModule({
   declarations: [
@@ -16,10 +18,15 @@ import { ButtonInputModule } from 'src/app/components/inputs/button/button.modul
     CommonModule,
     HeaderModule,
     SelectModule,
+    LabelsCardModule,
+
+    //INPUTS
+    NumberInputModule,
+    ButtonInputModule,
     TextInputModule,
     DateInputModule,
-    LabelsCardModule,
-    ButtonInputModule
+
+    FooterModule
   ], exports: [
     RegisterPageComponent
   ]

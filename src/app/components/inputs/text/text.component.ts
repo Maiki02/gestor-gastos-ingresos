@@ -6,7 +6,7 @@ import { InputForm } from '../input';
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.scss']
 })
-export class TextInputComponent extends InputForm {
+export class TextInputComponent extends InputForm<string> {
   
   constructor(){
     super();

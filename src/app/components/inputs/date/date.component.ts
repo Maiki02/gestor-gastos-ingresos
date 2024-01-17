@@ -6,7 +6,7 @@ import { InputForm } from '../input';
   templateUrl: './date.component.html',
   styleUrls: ['./date.component.scss']
 })
-export class DateInputComponent extends InputForm {
+export class DateInputComponent extends InputForm<string> {
 
   constructor(){
     super();

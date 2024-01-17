@@ -6,7 +6,7 @@ import { InputForm } from '../input';
   templateUrl: './colour.component.html',
   styleUrls: ['./colour.component.scss']
 })
-export class ColourInputComponent extends InputForm {
+export class ColourInputComponent extends InputForm<string> {
   constructor(){
     super();
   }

@@ -37,6 +37,10 @@ export class RegisterPageComponent implements OnInit {
     this.registerToGenerate={...this.registerToGenerate, label: label};
   }
 
+  setAmount(amount:number){
+    this.registerToGenerate={...this.registerToGenerate, amount: amount};
+  }
+
   getLabels(select:EnumSelect){
     return select===EnumSelect.GASTOS? getExpenseLabels(): getIncomeLabels();
   }
