@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { EnumSelect } from 'src/app/components/select/select.component';
 import { COLOR_PRIMARY, LABEL_VOID, allLabels } from 'src/app/shared/const/label';
+import { NAVEGATION } from 'src/app/shared/const/navegation';
 import { Label } from 'src/app/shared/interfaces/label.interface';
-import { isValidLabel } from 'src/app/shared/labels';
+import { isValidLabel, saveLabelInLocalStorage } from 'src/app/shared/labels';
 
 @Component({
   selector: 'app-labels',
@@ -14,7 +16,7 @@ export class LabelsPageComponent {
   allLabels:Label[]=allLabels;
   messageInfo:string='';
 
-  constructor() { 
+  constructor(private router:Router) { 
     this.setColour(COLOR_PRIMARY);
     this.setSection(EnumSelect.GASTOS);
     this.setName('');
@@ -46,8 +48,9 @@ export class LabelsPageComponent {
 
   saveLabel(){
     if(isValidLabel(this.labelToGenerate)){
-      console.log('Label saved!', this.labelToGenerate);
+      saveLabelInLocalStorage(this.labelToGenerate);
       this.messageInfo='';
+      this.router.navigate(['/'+NAVEGATION.home]);
     } else {
       this.messageInfo='Completa todos los campos para continuar.'
     }

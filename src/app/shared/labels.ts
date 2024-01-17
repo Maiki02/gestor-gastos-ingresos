@@ -91,6 +91,16 @@ export function getIncomeLabels(){
     ]    
 }
 
+/**
+ * Given a label, returns the expense labels saved in localStorage.
+ * @param name - The name of the localStorage item.
+ * @returns An array with the expense labels saved in localStorage.
+ */
+export function getLabelsInLocalStorage(name:string):Label[]{
+    const item= localStorage.getItem(name);
+    return item ? JSON.parse(item) : [];
+}
+
 export function saveLabelInLocalStorage(label:Label){
     const nameLocStor= label.section === EnumSelect.GASTOS ? localStorageLabel.labelsGastos : localStorageLabel.labelsIngresos;
     const labelsInLocalStorage = localStorage.getItem(nameLocStor) ? JSON.parse(localStorage.getItem(nameLocStor)!) : [];
