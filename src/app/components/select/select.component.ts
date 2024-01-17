@@ -2,7 +2,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export enum EnumSelect {
   INGRESOS = 'ingresos',
-  GASTOS = 'gastos'
+  GASTOS = 'gastos',
+  VOID = ''
 }
 
 

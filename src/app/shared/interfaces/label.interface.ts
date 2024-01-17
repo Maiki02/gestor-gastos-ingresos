@@ -7,6 +7,7 @@ export interface Label {
     color: string;
     section?: EnumSelect;
     description?: string;
+    status?: number;
     createdAt?: Date;
     updatedAt?: Date;
 }

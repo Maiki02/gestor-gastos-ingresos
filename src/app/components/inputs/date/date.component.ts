@@ -12,5 +12,7 @@ export class DateInputComponent extends InputForm {
     super();
   }
 
-  
+  changeDate(event:any){
+    this.emit(event.target.value);
+  }
 }
