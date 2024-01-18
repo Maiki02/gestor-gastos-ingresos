@@ -3,7 +3,6 @@
     <app-select class="section width-100 margin-24" [selected]="this.registerToGenerate.section" (set)="setSelect($event)"></app-select>
 
     <div class="page-with-padding">
-        
         <app-number-input class="section width-100 margin-24" [value]="this.registerToGenerate.amount" [placeholder]="'Ingresa un número'" 
         (set)="setAmount($event)"></app-number-input>
 
@@ -11,7 +10,10 @@
         [text]="getText(this.registerToGenerate.section)" [labels]="getLabels(this.registerToGenerate.section)" 
         [showSelected]="true" [selected]="getSelected()" (select)="setLabelSelected($event)"></app-labels-card>
 
-        <app-date-input [value]="getDateSelected()" [placeholder]="'Ingresa una fecha'" (set)="setDate($event)"></app-date-input>
+        <app-text-input class="section width-100 margin-24" [value]="this.registerToGenerate.description ?? ''"
+        [placeholder]="'Ingrese una descripción'" (set)="setDescription($event)"></app-text-input>
+
+        <app-date-input [value]="getDateSelected()" [placeholder]="'Ingrese una fecha'" (set)="setDate($event)"></app-date-input>
 
         <div class="column-left gap-2 width-100">
             <app-button-input class="section width-100" [text]="'Aplicar'" (click)="saveRegister()"></app-button-input> 

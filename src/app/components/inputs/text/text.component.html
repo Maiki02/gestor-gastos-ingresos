@@ -1,4 +1,4 @@
 <div class="input-container row-left gap-8">
     <input class="input" [ngClass]="{'is-enabled':value}" 
-    type="text" [value]="value" [placeholder]="'Escribe un nombre'" (blur)="changeText($event)">
+    type="text" [value]="value" [placeholder]="placeholder? placeholder:'Ingrese un nombre'" (blur)="changeText($event)">
 </div>

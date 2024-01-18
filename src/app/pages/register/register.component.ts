@@ -11,7 +11,7 @@ import {
   getAllIncomeLabels,
   getLabelText,
 } from 'src/app/shared/labels';
-import { isValidRegister } from 'src/app/shared/register';
+import { isValidRegister, saveRegisterInLocalStorage } from 'src/app/shared/register';
 
 @Component({
   selector: 'app-register',
@@ -28,6 +28,7 @@ export class RegisterPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.setSelect(EnumSelect.GASTOS);
+    this.setDate(getDateAAAAMMDD(new Date()));
     this.expenseLabels = getAllExpenseLabels();
     this.incomeLabels = getAllIncomeLabels();
   }
@@ -52,12 +53,16 @@ export class RegisterPageComponent implements OnInit {
     this.registerToGenerate = { ...this.registerToGenerate, amount: amount };
   }
 
+  setDescription(description: string) {
+    this.registerToGenerate = { ...this.registerToGenerate, description: description};
+  }
+
   getLabels(select: EnumSelect) {
     return select === EnumSelect.GASTOS? this.expenseLabels: this.incomeLabels;
   }
 
   getDateSelected() {
-    return this.registerToGenerate.date? this.registerToGenerate.date: getDateAAAAMMDD(new Date());
+    return this.registerToGenerate.date;
   }
 
   getSelected(): string {
@@ -66,7 +71,7 @@ export class RegisterPageComponent implements OnInit {
 
   saveRegister() {
     if (isValidRegister(this.registerToGenerate)) {
-      //saveLabelInLocalStorage(this.labelToGenerate);
+      saveRegisterInLocalStorage(this.registerToGenerate);
       this.messageInfo = '';
       this.router.navigate(['/' + NAVEGATION.home]);
     } else {

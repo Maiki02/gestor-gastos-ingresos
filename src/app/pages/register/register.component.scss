@@ -1,1 +1,12 @@
 @import './../../shared/styles/body-page.scss';
+
+.message-info{
+    font-size: 14px;
+    padding: 0px 4px;
+}
+
+@media screen and (max-width: 1024px) {
+    .message-info{
+        font-size: 12px;
+    }
+}

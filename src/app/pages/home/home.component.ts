@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EnumSelect } from 'src/app/components/select/select.component';
-import { localStorageLabel } from 'src/app/shared/const/localStorage';
 import { Label } from 'src/app/shared/interfaces/label.interface';
-import { getAllExpenseLabels, getAllIncomeLabels, getLabelText, getLabelsInLocalStorage } from 'src/app/shared/labels';
+import { getAllExpenseLabels, getAllIncomeLabels, getLabelText } from 'src/app/shared/labels';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +17,6 @@ export class HomeComponent implements OnInit{
   constructor() { }
 
   ngOnInit(): void {
-    console.log(getLabelsInLocalStorage(localStorageLabel.labelsGastos))
     this.labelGastos=getAllExpenseLabels()
     this.labelIngresos=getAllIncomeLabels();
   }

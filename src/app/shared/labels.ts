@@ -9,6 +9,15 @@ export function isValidLabel(label:Label):boolean{
     return isNameValid(label.name) && isColorValid(label.color) && isIconValid(label.icon) && isSectionValid(label.section); 
 }
 
+/**
+ * Given a Label, validates if default fields are valid.
+ * @param label - The input Label to be validated.
+ * @returns True if the input is a valid Label, false otherwise.
+ */
+export function isValidDefaultLabel(label:Label):boolean{
+    return isColorValid(label.color) && isIconValid(label.icon);
+}
+
 /* Given a name, validates if its name is valid.
     string -> boolean */
 function isNameValid(name:string | undefined):boolean{
@@ -71,10 +80,10 @@ export function getLabelText(select:EnumSelect){
 export function getExpenseLabels():Label[]{
     return [
         {id: '1', icon: 'restaurant', color: '#FE4E00'},
-        {id: '2', icon: 'bus', color: '#ABABAB'},
-        {id: '3', icon: 'tool', color: '#222222'},
-        {id: '4', icon: 'shirt', color: '#FF00FF'},
-        {id: '5', icon: 'card', color: '#FF0000'}
+        {id: '2', icon: 'bus', color: '#ffd64e'},
+        {id: '3', icon: 'tool', color: '#82692F'},
+        {id: '4', icon: 'shirt', color: '#F19EF5'},
+        {id: '5', icon: 'card', color: '#F03B33'}
     ]    
 }
 
@@ -85,9 +94,9 @@ export function getExpenseLabels():Label[]{
  */
 export function getIncomeLabels(){
     return [
-        {id: '1', icon: 'cash', color: '#0AF00F'},
-        {id: '2', icon: 'cripto', color: '#FE4E00'},
-        {id: '3', icon: 'store', color: '#ACACAC'}
+        {id: '1', icon: 'cash', color: '#4AC769'},
+        {id: '2', icon: 'cripto', color: '#ffa60d'},
+        {id: '3', icon: 'store', color: '#5CCCA4'}
     ]    
 }
 

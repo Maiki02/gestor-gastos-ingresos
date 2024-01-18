@@ -13,6 +13,6 @@ export class NumberInputComponent extends InputForm<number> {
   }
 
   changeNumber(event:any){
-    this.emit(event.target.value);
+    this.emit(Number(event.target.value));
   }
 }

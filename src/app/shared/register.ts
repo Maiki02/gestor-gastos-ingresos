@@ -1,7 +1,7 @@
 import { EnumSelect } from "../components/select/select.component";
 import { localStorageRegister } from "./const/localStorage";
 import { Register } from "./interfaces/register.interface";
-import { getRandomId, isSectionValid, isValidLabel } from "./labels";
+import { getRandomId, isSectionValid, isValidDefaultLabel, isValidLabel } from "./labels";
 
 /**
  * Given a Register, validates if all its fields are valid.
@@ -12,7 +12,7 @@ export function isValidRegister(register: Register): boolean {
   return (
     isSectionValid(register.section) &&
     isDateValid(register.date) &&
-    isValidLabel(register.label) &&
+    isValidDefaultLabel(register.label) &&
     register.amount > 0
   );
 }
