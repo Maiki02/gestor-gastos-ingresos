@@ -50,7 +50,7 @@ function isValidHexadecimal(hexString: string): boolean {
  * @param section - The input string to be validated.
  * @returns True if the input is a valid section, false otherwise.
  */
-function isSectionValid(section:string | undefined):boolean{
+export function isSectionValid(section:string | undefined):boolean{
     return section==EnumSelect.GASTOS || section==EnumSelect.INGRESOS;
 }
 
@@ -109,26 +109,30 @@ export function getAllIncomeLabels(){
     return [...getIncomeLabels(), ...getLabelsInLocalStorage(localStorageLabel.labelsIngresos)];
 }
 
+/**
+ * Given a label, saves it in localStorage.
+ * @param label - The label to be saved.
+ */
 export function saveLabelInLocalStorage(label:Label){
     const nameLocStor= label.section === EnumSelect.GASTOS ? localStorageLabel.labelsGastos : localStorageLabel.labelsIngresos;
-    const labelsInLocalStorage = localStorage.getItem(nameLocStor) ? JSON.parse(localStorage.getItem(nameLocStor)!) : [];
-    const id:number=getRandomId(labelsInLocalStorage)
+    const array:Label[] = localStorage.getItem(nameLocStor) ? JSON.parse(localStorage.getItem(nameLocStor)!) : [];
+    const id:number=getRandomId(array)
 
-    labelsInLocalStorage.push({
+    array.push({
         ...label,
         id: id.toString()
     });
-    localStorage.setItem(nameLocStor, JSON.stringify(labelsInLocalStorage));
+    localStorage.setItem(nameLocStor, JSON.stringify(array));
 }
 
 /**
  * We obtain a random number from 1000 to 9999 (inclusive).
- * We look for the number in the array of labels, if it does not exist, 
+ * We look for the number in the array, if it does not exist, 
  * we return the number, if it exists we execute the function again.
- * @param labels - The array of labels.
+ * @param labels - The array.
  * @returns A random number from 1000 to 9999 (inclusive).
  */
-function getRandomId(labels:Label[]):number{
+export function getRandomId(labels:any[]):number{
     const id:number=Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
     return labels.some( (label:Label) => label.id == id.toString()) ? getRandomId(labels) : id;
 }

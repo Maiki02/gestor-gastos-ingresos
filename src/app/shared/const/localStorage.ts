@@ -1,4 +1,9 @@
 export const localStorageLabel={
-    labelsIngresos: 'labelsIngresos',
-    labelsGastos: 'labelsGastos',
+    labelsIngresos: 'labels-income',
+    labelsGastos: 'labels-expense',
+}
+
+export const localStorageRegister={
+    registerExpense: 'registers-expense',
+    registerIncome: 'registers-income',
 }
