@@ -1,7 +1,7 @@
 import { EnumSelect } from "src/app/components/select/select.component";
 
 export interface Label {
-    id: number;
+    id: string;
     name?: string;
     icon: string;
     color: string;

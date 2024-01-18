@@ -4,7 +4,7 @@ import { REGISTER_VOID } from 'src/app/shared/const/register';
 import { getDateAAAAMMDD } from 'src/app/shared/date';
 import { Label } from 'src/app/shared/interfaces/label.interface';
 import { Register } from 'src/app/shared/interfaces/register.interface';
-import { getExpenseLabels, getIncomeLabels, getLabelText } from 'src/app/shared/labels';
+import { getAllExpenseLabels, getAllIncomeLabels, getExpenseLabels, getIncomeLabels, getLabelText } from 'src/app/shared/labels';
 
 @Component({
   selector: 'app-register',
@@ -14,11 +14,15 @@ import { getExpenseLabels, getIncomeLabels, getLabelText } from 'src/app/shared/
 export class RegisterPageComponent implements OnInit {
   messageInfo:string='';
   registerToGenerate:Register=REGISTER_VOID;
+  expenseLabels:Label[]=[];
+  incomeLabels:Label[]=[];
 
   constructor(){}
 
   ngOnInit(): void {
     this.setSelect(EnumSelect.GASTOS);
+    this.expenseLabels=getAllExpenseLabels();
+    this.incomeLabels=getAllIncomeLabels();
   }
 
   getText(select:EnumSelect){
@@ -42,15 +46,15 @@ export class RegisterPageComponent implements OnInit {
   }
 
   getLabels(select:EnumSelect){
-    return select===EnumSelect.GASTOS? getExpenseLabels(): getIncomeLabels();
+    return select===EnumSelect.GASTOS? this.expenseLabels: this.incomeLabels;
   }
 
   getDateSelected(){
     return this.registerToGenerate.date? this.registerToGenerate.date: getDateAAAAMMDD(new Date());
   }
 
-  getIconSelected(){
-    return this.registerToGenerate.label? this.registerToGenerate.label.icon: '';
+  getSelected():string{
+    return this.registerToGenerate.label? this.registerToGenerate.label.id.toString(): '';
   }
 
   saveRegister(){

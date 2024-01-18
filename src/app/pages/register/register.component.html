@@ -9,7 +9,7 @@
 
         <app-labels-card class="section width-100 margin-24" [showAdd]="false"
         [text]="getText(this.registerToGenerate.section)" [labels]="getLabels(this.registerToGenerate.section)" 
-        [showSelected]="true" [selected]="getIconSelected()" (select)="setLabelSelected($event)"></app-labels-card>
+        [showSelected]="true" [selected]="getSelected()" (select)="setLabelSelected($event)"></app-labels-card>
 
         <app-date-input [value]="getDateSelected()" [placeholder]="'Ingresa una fecha'" (set)="setDate($event)"></app-date-input>
 

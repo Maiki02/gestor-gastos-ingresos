@@ -3,7 +3,7 @@
 
     <div class="labels" [ngClass]="{'center-content':centerContent}">
         <app-label *ngFor="let label of labels" [label]="label" 
-        class="label pointer" [ngClass]="{'is-selected': showSelected && selected==label.icon}" 
+        class="label pointer" [ngClass]="{'is-selected': showSelected && selected==label.id}" 
         (click)="selectIcon(label)"></app-label>
         
         <plus-sign class="label pointer" *ngIf="showAdd" (click)="goToLabels()"></plus-sign>

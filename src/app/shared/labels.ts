@@ -70,11 +70,11 @@ export function getLabelText(select:EnumSelect){
  */
 export function getExpenseLabels():Label[]{
     return [
-        {id: 1, icon: 'restaurant', color: '#FE4E00'},
-        {id: 2, icon: 'bus', color: '#ABABAB'},
-        {id: 3, icon: 'tool', color: '#222222'},
-        {id: 4, icon: 'shirt', color: '#FF00FF'},
-        {id: 5, icon: 'card', color: '#FF0000'}
+        {id: '1', icon: 'restaurant', color: '#FE4E00'},
+        {id: '2', icon: 'bus', color: '#ABABAB'},
+        {id: '3', icon: 'tool', color: '#222222'},
+        {id: '4', icon: 'shirt', color: '#FF00FF'},
+        {id: '5', icon: 'card', color: '#FF0000'}
     ]    
 }
 
@@ -85,9 +85,9 @@ export function getExpenseLabels():Label[]{
  */
 export function getIncomeLabels(){
     return [
-        {id: 1, icon: 'cash', color: '#0AF00F'},
-        {id: 2, icon: 'cripto', color: '#FE4E00'},
-        {id: 3, icon: 'store', color: '#ACACAC'}
+        {id: '1', icon: 'cash', color: '#0AF00F'},
+        {id: '2', icon: 'cripto', color: '#FE4E00'},
+        {id: '3', icon: 'store', color: '#ACACAC'}
     ]    
 }
 
@@ -101,9 +101,34 @@ export function getLabelsInLocalStorage(name:string):Label[]{
     return item ? JSON.parse(item) : [];
 }
 
+export function getAllExpenseLabels(){
+    return [...getExpenseLabels(), ...getLabelsInLocalStorage(localStorageLabel.labelsGastos)];
+}
+
+export function getAllIncomeLabels(){
+    return [...getIncomeLabels(), ...getLabelsInLocalStorage(localStorageLabel.labelsIngresos)];
+}
+
 export function saveLabelInLocalStorage(label:Label){
     const nameLocStor= label.section === EnumSelect.GASTOS ? localStorageLabel.labelsGastos : localStorageLabel.labelsIngresos;
     const labelsInLocalStorage = localStorage.getItem(nameLocStor) ? JSON.parse(localStorage.getItem(nameLocStor)!) : [];
-    labelsInLocalStorage.push(label);
+    const id:number=getRandomId(labelsInLocalStorage)
+
+    labelsInLocalStorage.push({
+        ...label,
+        id: id.toString()
+    });
     localStorage.setItem(nameLocStor, JSON.stringify(labelsInLocalStorage));
+}
+
+/**
+ * We obtain a random number from 1000 to 9999 (inclusive).
+ * We look for the number in the array of labels, if it does not exist, 
+ * we return the number, if it exists we execute the function again.
+ * @param labels - The array of labels.
+ * @returns A random number from 1000 to 9999 (inclusive).
+ */
+function getRandomId(labels:Label[]):number{
+    const id:number=Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+    return labels.some( (label:Label) => label.id == id.toString()) ? getRandomId(labels) : id;
 }
