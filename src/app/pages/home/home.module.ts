@@ -5,6 +5,7 @@ import { FooterModule } from 'src/app/components/footer/footer.module';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { SelectModule } from 'src/app/components/select/select.module';
 import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.module';
+import { RegistersTableModule } from 'src/app/components/registers/registers.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { LabelsCardModule } from 'src/app/components/labels-card/labels-card.mod
     HeaderModule,
     FooterModule,
     SelectModule,
-    LabelsCardModule
+    
+    LabelsCardModule,
+    RegistersTableModule
   ], exports: [
     HomeComponent
   ]

@@ -1,17 +1,7 @@
 @import './../../shared/styles/vars.scss';
 
-.card-label{
-    height: auto;
-    padding: 8px;
-    gap: 8px;
-    width: 100%;
-    background: $color-white;
-    border-radius: 10px;
-    box-shadow: 0 0 3px rgba(0,0,0,.1);
-}
-
 .info{
-    font-size: 12px;
+    font-size: 16px;
     line-height: 100%;
     color: $color-dark;
 }
@@ -32,4 +22,10 @@
 
 .center-content{
     justify-content: center;
+}
+
+@media screen and (max-width:1024px){
+    .info{
+        font-size: 12px;
+    }
 }

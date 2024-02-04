@@ -1,0 +1,48 @@
+@import './../styles/vars.scss';
+
+$COLOR_HEADER: #afafaf;
+$COLOR_ROW: #fff;
+
+$HEIGHT_CELL: 36px;
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead{
+        tr{
+            #first-col{
+                border-top-left-radius: 10px;
+            }
+
+            #last-col{
+                border-top-right-radius: 10px;
+            }
+
+            th{
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                background:$COLOR_HEADER;
+            }
+        }
+    }
+    tbody{
+        tr{
+            td{
+                padding: 10px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
+        tr:hover{
+            cursor: pointer;
+            background: #eee;
+        }
+    }
+}
+
+tr{
+    height: $HEIGHT_CELL;
+}

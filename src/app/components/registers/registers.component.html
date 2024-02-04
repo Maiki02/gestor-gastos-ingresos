@@ -1,0 +1,39 @@
+<div class="card column-left gap-16 width-100">
+    <span class="title">{{title}}</span>
+
+    <div class="width-100 column-left gap-16" *ngIf="haveRegisters() else emptyState">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th id="first-col">Descripción</th>
+                    <th>Monto</th>
+                    <th>Fecha</th>
+                    <th id="last-col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let register of registers">
+                    <td>
+                        <div class="row-between">
+                            <app-label [size]="32" [iconSize]="16" [label]="register.label"></app-label>
+                            <span>{{getDescription(register)}}</span>
+                        </div>
+                    </td>
+                    <td>{{getAmountAndCoin(register)}}</td>
+                    <td>{{getDateOfCreation(register)}}</td>
+                    <td>></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row-right width-100">
+            <span class="show-more pointer" (click)="showMore()">Ver más...</span>
+        </div>
+    </div>
+
+    <ng-template #emptyState>
+        <div class="row-center width-100">
+            <span class="message-info">Aún no se encuentran registros.</span>
+        </div>
+    </ng-template>
+</div>

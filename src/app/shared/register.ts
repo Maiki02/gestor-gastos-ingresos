@@ -37,3 +37,26 @@ export function saveRegisterInLocalStorage(register: Register) {
 function isDateValid(date: string): boolean {
     return date != '';
 }
+
+//--------------- GETS ----------------\\
+export function getDescription(register: Register): string {
+  return register.description ?? register.label.name ?? '';
+}
+
+export function getAmountAndCoin(register: Register): string {
+  return `${register.coin? register.coin: '$'} ${register.amount}`;
+}
+
+export function getDateOfCreation(register: Register): string {
+  return register.date;
+}
+
+/**
+ * Given a string representing a localStorage value, it takes it, parses it, and returns it.
+ * @param nameLocStor - The name of the localStorage value to be retrieved.
+ * @returns The parsed value of the localStorage.
+ */
+export function getRegistersFromLocalStorage(nameLocStor: string): Register[] {
+  const item=localStorage.getItem(nameLocStor);
+  return item? JSON.parse(item) : [];
+}

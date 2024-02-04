@@ -1,0 +1,25 @@
+@import './../../shared/styles/table.scss';
+
+.title{
+    font-size: 16px;
+}
+
+.show-more{
+    font-size: 14px;
+    color: $color-primary;
+}
+
+.message-info{
+    color:$color-secondary;
+    
+}
+
+@media screen and (max-width:1024px){
+    .title, .message-info{
+        font-size: 12px;
+    }
+
+    .show-more{
+        font-size: 10px;
+    }
+}

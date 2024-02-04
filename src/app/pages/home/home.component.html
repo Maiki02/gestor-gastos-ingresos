@@ -1,16 +1,24 @@
 <div class="page-container">
     <app-header class="section width-100"></app-header>
-    <app-select class="section width-100 margin-24"></app-select>
+    <app-select class="section width-100 margin-24" [selected]="select" (set)="setSelect($event)"></app-select>
 
-    <div class="page-with-padding">
-        
-    <app-labels-card class="section width-100 margin-24" [text]="getText(selects.GASTOS)" [labels]="labelGastos"></app-labels-card>
-    <app-labels-card class="section width-100 margin-24" [text]="getText(selects.INGRESOS)" [labels]="labelIngresos"></app-labels-card>
+    <div class="page-with-padding" *ngIf="isIncome()">
+        <app-labels-card class="section width-100 margin-24" 
+        [text]="getTextLabel(selects.INGRESOS)" [labels]="labelIngresos"></app-labels-card>
 
+        <app-registers-table class="section width-100 margin-24" 
+        [title]="getTextRegister(selects.INGRESOS)" [registers]="registersIngresos"></app-registers-table>
     </div>
 
+    <div class="page-with-pagging" *ngIf="!isIncome()">
+        <app-labels-card class="section width-100 margin-24" 
+        [text]="getTextLabel(selects.GASTOS)" [labels]="labelGastos"></app-labels-card>
 
+        <app-registers-table class="section width-100 margin-24" 
+        [title]="getTextRegister(selects.GASTOS)" [registers]="registersGastos"></app-registers-table>
+    </div>
 
+    <div class="footer-void"></div>
     <app-footer class="section width-100 fixed-bottom"></app-footer>
 </div>
 
