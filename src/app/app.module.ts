@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 import { LabelsPageModule } from './pages/labels/labels.module';
 import { RegisterPageModule } from './pages/register/register.module';
+import { LoginPageModule } from './pages/login/login.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterPageModule } from './pages/register/register.module';
     AppRoutingModule,
     HomeModule,
     LabelsPageModule,
-    RegisterPageModule
+    RegisterPageModule,
+    LoginPageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

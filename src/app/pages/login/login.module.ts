@@ -16,4 +16,4 @@ import { ButtonInputModule } from 'src/app/components/inputs/button/button.modul
     LoginPageComponent
   ]
 })
-export class LoginModule { }
+export class LoginPageModule { }
