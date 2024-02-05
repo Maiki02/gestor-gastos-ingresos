@@ -1,0 +1,15 @@
+@import './../../shared/styles/vars.scss';
+
+.background{
+    width: 100vw;
+    height: 100vh;
+    background: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    max-width: 450px;
+    
+}
