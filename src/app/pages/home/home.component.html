@@ -10,7 +10,7 @@
         [title]="getTextRegister(selects.INGRESOS)" [registers]="registersIngresos"></app-registers-table>
     </div>
 
-    <div class="page-with-pagging" *ngIf="!isIncome()">
+    <div class="page-with-padding" *ngIf="!isIncome()">
         <app-labels-card class="section width-100 margin-24" 
         [text]="getTextLabel(selects.GASTOS)" [labels]="labelGastos"></app-labels-card>
 
