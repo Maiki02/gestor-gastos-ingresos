@@ -4,8 +4,12 @@
 
 
         <div class="form-section column-left">
-            <input class="width-100" type="text" placeholder="Nombre de usuario" [(value)]="username">
-            <input class="width-100" type="password" placeholder="Contraseña" [(value)]="password">
+
+            <div class="width-100">
+                <input type="text" placeholder="Nombre de usuario" [(ngModel)]="username">
+
+            </div>
+            <input type="password" placeholder="Contraseña" [(ngModel)]="password">
 
             <app-button-input class="width-100" [text]="'Ingresar'"></app-button-input>
         </div>
