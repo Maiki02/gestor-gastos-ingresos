@@ -7,7 +7,8 @@ import { InputForm } from '../input';
   styleUrls: ['./text.component.scss']
 })
 export class TextInputComponent extends InputForm<string> {
-  
+  @Input() type:string='text';
+  @Input() widthAuto:boolean=false;
   constructor(){
     super();
   }

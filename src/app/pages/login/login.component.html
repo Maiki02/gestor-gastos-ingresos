@@ -4,14 +4,30 @@
 
 
         <div class="form-section column-left">
+            <button class="google-login-button" (click)="loginWithGoogle()">
+                <img src="assets/google/logo.png" alt="Google Logo" class="google-logo">
+                Conectarse con Google
+            </button>
 
-            <div class="width-100">
-                <input type="text" placeholder="Nombre de usuario" [(ngModel)]="username">
-
+            <div class="width-100 line">
+                <div class="half-line"></div>
+                <span>o</span>
+                <div class="half-line"></div>
             </div>
-            <input type="password" placeholder="Contraseña" [(ngModel)]="password">
 
+
+            <app-text-input class="width-100" [placeholder]="'Nombre de usuario'"
+            [value]="username" [widthAuto]="true" (set)="setUsername($event)"></app-text-input>
+
+            <app-text-input class="width-100" [type]="'password'" [placeholder]="'Contraseña'"
+            [value]="password" [widthAuto]="true" (set)="setPassword($event)"></app-text-input>
+            
             <app-button-input class="width-100" [text]="'Ingresar'"></app-button-input>
+
+            <div class="actions width-100 column-left gap-4">
+                <span class="remember-password" (click)="rememberPassword()" >¿Olvidaste tu contraseña?</span>
+                <span class="register" (click)="register()">¿No tienes cuenta? Regístrate</span>
+            </div>
         </div>
 
     </div>

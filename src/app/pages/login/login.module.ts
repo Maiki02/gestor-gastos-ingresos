@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonInputModule } from 'src/app/components/inputs/button/button.module';
+import { TextInputModule } from 'src/app/components/inputs/text/text.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { ButtonInputModule } from 'src/app/components/inputs/button/button.modul
   imports: [
     CommonModule,
     FormsModule,
-    ButtonInputModule
+    ButtonInputModule,
+    TextInputModule
   ], exports: [
     LoginPageComponent
   ]

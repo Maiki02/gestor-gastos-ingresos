@@ -1,4 +1,4 @@
-<div class="input-container row-left gap-8">
+<div class="input-container row-left gap-8" [ngClass]="{'width-auto': widthAuto}">
     <input class="input" [ngClass]="{'is-enabled':value}" 
-    type="text" [value]="value" [placeholder]="placeholder? placeholder:'Ingrese un nombre'" (blur)="changeText($event)">
+    [type]="type" [value]="value" [placeholder]="placeholder? placeholder:'Ingrese un nombre'" (blur)="changeText($event)">
 </div>
