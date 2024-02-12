@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   loginAndGetToken(access_token:string){
-    return this.http.post<ResponseBackEnd>(rutas.login.getToken, access_token);
+    return this.http.post<ResponseBackEnd>(rutas.login.email, access_token);
   }
 
   loginGoogleAndGetToken(access_token:string){
