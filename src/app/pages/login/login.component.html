@@ -4,10 +4,15 @@
 
 
         <div class="form-section column-left">
-            <button class="google-login-button" (click)="loginWithGoogle()">
-                <img src="assets/google/logo.png" alt="Google Logo" class="google-logo">
-                Conectarse con Google
-            </button>
+            <asl-google-signin-button 
+            style="margin-left:6px;"
+            type='standard' 
+            size='large' 
+            shape="pill"
+            text="continue_with"
+            width="400"
+            theme="outline"
+            logo_alignment="center"></asl-google-signin-button>
 
             <div class="width-100 line">
                 <div class="half-line"></div>

@@ -4,6 +4,7 @@ import { LoginPageComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonInputModule } from 'src/app/components/inputs/button/button.module';
 import { TextInputModule } from 'src/app/components/inputs/text/text.module';
+import { GoogleSigninButtonModule, SocialLoginModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,9 @@ import { TextInputModule } from 'src/app/components/inputs/text/text.module';
     CommonModule,
     FormsModule,
     ButtonInputModule,
-    TextInputModule
+    TextInputModule,
+    SocialLoginModule,
+    GoogleSigninButtonModule
   ], exports: [
     LoginPageComponent
   ]

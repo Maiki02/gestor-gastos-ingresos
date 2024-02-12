@@ -7,7 +7,7 @@ import { RegisterPageComponent } from './pages/register/register.component';
 import { LoginPageComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'home'},
+  {path: '', pathMatch: 'full', redirectTo: 'login'},
   {path: NAVEGATION.login, component: LoginPageComponent},
   {path: NAVEGATION.home, component: HomeComponent},
   {path: NAVEGATION.labels, component: LabelsPageComponent},
