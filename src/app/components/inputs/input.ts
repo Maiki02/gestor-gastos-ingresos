@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 export class InputForm<T>{
     @Input() value!:T;
     @Input() placeholder:string=''
+    @Input() isInvalid:boolean=false;
     @Output() set=new EventEmitter<T>();
     
     constructor(){}

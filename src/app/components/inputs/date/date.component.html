@@ -1,4 +1,4 @@
 <div class="input-container row-left gap-8">
-    <input class="input" [ngClass]="{'is-enabled':value}"
+    <input class="input" [ngClass]="{'is-enabled':value,'is-invalid':isInvalid}"
     type="date" [placeholder]="placeholder" [value]="value" (change)="changeDate($event)">
 </div>

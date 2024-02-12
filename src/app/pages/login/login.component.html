@@ -1,17 +1,12 @@
 <div class="background">
 
     <div class="card">
-
-
-        <div class="form-section column-left">
+        <div class="form-section column-left" *ngIf="!isRegister">
             <asl-google-signin-button 
             style="margin-left:6px;"
-            type='standard' 
-            size='large' 
-            shape="pill"
-            text="continue_with"
-            width="400"
-            theme="outline"
+            type='standard' size='large' 
+            shape="pill" text="continue_with"
+            width="400" theme="outline"
             logo_alignment="center"></asl-google-signin-button>
 
             <div class="width-100 line">
@@ -20,18 +15,52 @@
                 <div class="half-line"></div>
             </div>
 
+            <app-text-input class="width-100" [placeholder]="'Email'" [name]="'email'"
+            [value]="email" [widthAuto]="true" [isInvalid]="isLoginInvalid" (set)="setUsername($event)"></app-text-input>
 
-            <app-text-input class="width-100" [placeholder]="'Nombre de usuario'"
-            [value]="username" [widthAuto]="true" (set)="setUsername($event)"></app-text-input>
-
-            <app-text-input class="width-100" [type]="'password'" [placeholder]="'Contraseña'"
-            [value]="password" [widthAuto]="true" (set)="setPassword($event)"></app-text-input>
+            <app-text-input class="width-100" [type]="'password'" [name]="'password'" [placeholder]="'Contraseña'"
+            [value]="password" [widthAuto]="true" [isInvalid]="isLoginInvalid" (set)="setPassword($event)"></app-text-input>
             
-            <app-button-input class="width-100" [text]="'Ingresar'"></app-button-input>
+            <app-button-input class="width-100" [text]="'Ingresar'" (click)="loginWithSupabase()"></app-button-input>
+
+            <span class="message-error" *ngIf="messageError">{{messageError}}</span>
 
             <div class="actions width-100 column-left gap-4">
                 <span class="remember-password" (click)="rememberPassword()" >¿Olvidaste tu contraseña?</span>
-                <span class="register" (click)="register()">¿No tienes cuenta? Regístrate</span>
+                <span class="register" (click)="setIsRegister(true)">¿No tienes cuenta? Regístrate</span>
+            </div>
+        </div>
+
+        <div class="form-section column-left" *ngIf="isRegister">
+
+            <div class="complete-name width-100 row-between gap-8">
+                <app-text-input class="input" [placeholder]="'Nombre'" [name]="'name'"
+                [value]="name" [widthAuto]="true" [isInvalid]="registerInvalid && !name" (set)="setName($event)"></app-text-input>
+
+                <app-text-input class="input" [placeholder]="'Apellido'" [name]="'lastname'"
+                [value]="lastname" [widthAuto]="true" [isInvalid]="registerInvalid && !lastname" (set)="setLastname($event)"></app-text-input>
+            </div>
+            
+            <app-text-input class="width-100" [placeholder]="'Email'" [name]="'email'"
+            [value]="email" [widthAuto]="true" [isInvalid]="registerInvalid && !email" (set)="setUsername($event)"></app-text-input>
+
+            <app-text-input class="width-100" [type]="'password'" [name]="'password'" [placeholder]="'Contraseña'"
+            [value]="password" [isInvalid]="registerInvalid && !password" [widthAuto]="true" (set)="setPassword($event)"></app-text-input>
+
+            <div class="column-left gap-4">
+
+                <app-text-input class="width-100" [type]="'password'" [name]="'passwordConfirm'" [placeholder]="'Confirmar contraseña'"
+                [value]="passwordConfirm" [widthAuto]="true" 
+                [isInvalid]="(registerInvalid && !passwordConfirm) || isInvalidPasswordConfirm()" (set)="setPasswordConfirm($event)"></app-text-input>
+    
+                <span class="message-error" *ngIf="isInvalidPasswordConfirm()">Las contraseñas no coinciden.</span>
+            </div>
+
+            <app-button-input class="width-100" [text]="'Registrarse'" (click)="registerWithSupabase()"></app-button-input>
+            <span class="message-error" *ngIf="messageError">{{messageError}}</span>
+            <div class="actions width-100 column-left gap-4">
+                <span class="remember-password" (click)="rememberPassword()" >¿Olvidaste tu contraseña?</span>
+                <span class="register" (click)="setIsRegister(false)">¿Ya tienes cuenta? Ingresar</span>
             </div>
         </div>
 

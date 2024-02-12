@@ -9,6 +9,7 @@ import { InputForm } from '../input';
 export class TextInputComponent extends InputForm<string> {
   @Input() type:string='text';
   @Input() widthAuto:boolean=false;
+  @Input() name:string='';
   constructor(){
     super();
   }
